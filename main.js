@@ -1,17 +1,60 @@
-//Дані
-/**
- * boolean - true/false - Так, Ні, Правда, Брехня, логічний тип даних, 
- * number - 0, 123, -4545, 666.455, NaN. Числа. 
- * string - 'example 1', "example 2", `example 3` - template string (шаблонні строки)
- * object - контейнер з даними, 
- * symbol
- * null
- * undefined
- * big int
- */
+let i = 0;
 
-const text = `Lorem ipsum dolor sit amet consectetur ${ 2 + 2 } adipisicing elit. 
-Rem, et quis quia mollitia ab nihil excepturi sit temporibus perspiciatis. 
-Voluptatibus consequuntur rem at neque repellat perferendis consequatur eius recusandae maiores.`;
+// Операція
+// операнд оператор операнд
+5 + 9 // 14
+'1' + 0 // '10'
+// по операндам
+// унарні
+console.log(+i);
+console.log(-i);
+i++;
+i--;
+++i;
+--i;
+new Date();
+typeof i;
+console.log(!i);
+console.log(~i);
 
-console.log(text);
+// бінарні
+const g = i;
+i + g;
+g * i;
+g ** 3;
+i / 44;
+g % 2;
+
+// тернарні
+i > 0 ? console.log(true) : console.log(false);
+
+if(i > 0){
+    console.log(true);
+}else{
+    console.log(false);
+}
+
+i = 100;
+
+//Цикли
+//цикл з передумовою
+// while(i < 10){
+//     console.log('i:', i);
+//     i++;
+// }
+
+// for(let j = 0; j < 10; j++){
+//     console.log(j);
+// }
+
+//цикл з післяумовою
+// do{
+//     console.log('i', i);
+//     i++;
+// }while(i < 10);
+
+// console.log(i);
+
+console.log('alert', alert('Hello'));// pop-up вікно з інформацією
+console.log('prompt', prompt('type here', 'lalala'));//поп-ап, але з полем для вводу (другий аргумент - значення за замовчуванням)
+console.log('confirm', confirm('Are you sure?'));//поп-ап, але з кнопками "Так", "Ні"
