@@ -1,17 +1,16 @@
-//Дані
-/**
- * boolean - true/false - Так, Ні, Правда, Брехня, логічний тип даних, 
- * number - 0, 123, -4545, 666.455, NaN. Числа. 
- * string - 'example 1', "example 2", `example 3` - template string (шаблонні строки)
- * object - контейнер з даними, 
- * symbol
- * null
- * undefined
- * big int
- */
+const ui = {
+    btn : document.querySelector('.btn_count'),
+    inpA : document.querySelector('.inp_a'),
+    inpB : document.querySelector('.inp_b'),
+    answer : document.querySelector('.answer'),
+};
 
-const text = `Lorem ipsum dolor sit amet consectetur ${ 2 + 2 } adipisicing elit. 
-Rem, et quis quia mollitia ab nihil excepturi sit temporibus perspiciatis. 
-Voluptatibus consequuntur rem at neque repellat perferendis consequatur eius recusandae maiores.`;
+const onClickCount = () => {
+    const a = ui.inpA.value;
+    const b = ui.inpB.value;
 
-console.log(text);
+    const s = a * b;
+    ui.answer.innerText = s;
+}
+
+ui.btn.addEventListener('click', onClickCount);
