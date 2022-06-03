@@ -1,17 +1,36 @@
-//Дані
-/**
- * boolean - true/false - Так, Ні, Правда, Брехня, логічний тип даних, 
- * number - 0, 123, -4545, 666.455, NaN. Числа. 
- * string - 'example 1', "example 2", `example 3` - template string (шаблонні строки)
- * object - контейнер з даними, 
- * symbol
- * null
- * undefined
- * big int
- */
+//Методи масивів
 
-const text = `Lorem ipsum dolor sit amet consectetur ${ 2 + 2 } adipisicing elit. 
-Rem, et quis quia mollitia ab nihil excepturi sit temporibus perspiciatis. 
-Voluptatibus consequuntur rem at neque repellat perferendis consequatur eius recusandae maiores.`;
+const paymentsInPLN = [12, 66, 34, 3.5, 8, 11];
+const PLN_TO_UAH = 6.87;
 
-console.log(text);
+
+//!Новий масив, зроблений зі старого (оброблений)
+// const paymentsInUAH = [];
+// for(let i = 0; i < paymentsInPLN.length; i += 1){
+//     paymentsInUAH.push(paymentsInPLN[i] * PLN_TO_UAH);
+// }
+
+const paymentsInUAH = paymentsInPLN.map((p) => p * PLN_TO_UAH);
+const paymentsInUAH2 = paymentsInPLN.map(function(p){ return  p * PLN_TO_UAH});
+
+console.log(paymentsInUAH);
+
+function show(text){
+    console.log(text);
+}
+
+const ui = {
+    inp : document.querySelector('.inpPLN'),
+    txt : document.querySelector('.textUAH')
+};
+
+const onChange = () => {
+    const pln = Number(ui.inp.value);
+    const uah = convert(pln, PLN_TO_UAH);
+    ui.txt.innerText = uah;
+}
+
+const convert = (value, exch) => value * exch;
+
+ui.inp.addEventListener('input', onChange);
+
