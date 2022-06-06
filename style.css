@@ -2,3 +2,12 @@ body{
     background-color: #f1f1f1;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.red{
+    background-color: red;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+}
