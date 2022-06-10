@@ -1,17 +1,52 @@
-//Дані
-/**
- * boolean - true/false - Так, Ні, Правда, Брехня, логічний тип даних, 
- * number - 0, 123, -4545, 666.455, NaN. Числа. 
- * string - 'example 1', "example 2", `example 3` - template string (шаблонні строки)
- * object - контейнер з даними, 
- * symbol
- * null
- * undefined
- * big int
- */
+//Знаходити
 
-const text = `Lorem ipsum dolor sit amet consectetur ${ 2 + 2 } adipisicing elit. 
-Rem, et quis quia mollitia ab nihil excepturi sit temporibus perspiciatis. 
-Voluptatibus consequuntur rem at neque repellat perferendis consequatur eius recusandae maiores.`;
+//змінювати внутрішній контент - текст, стиль(зовнішній вигляд)
 
-console.log(text);
+//видаляти
+
+//створювати
+
+//2 шляхи створення елементів
+//повністю через строки
+//  .innerHTML
+const test = document.querySelector('.test');
+
+const redSq = '<div class="red square"></div>';
+
+test.innerHTML = redSq;
+// test.innerText = redSq;
+
+//повністю через об'єкти
+const div = document.createElement('div');
+div.classList.add('blue', 'square');
+test.appendChild(div);
+
+
+//Видалення
+document.querySelector('.btn-delete').addEventListener('click', () => {
+    //Видалення через об'єкти
+    
+    // while(test.hasChildNodes()){
+    //     // test.removeChild(test.firstChild);
+    //     test.firstChild.remove();
+    // }
+
+    test.innerHTML = '';
+});
+
+setTimeout(() => {
+    console.log('hello, I am a setTimeOut');
+}, 3000);
+
+const intervalID = setInterval(() => {
+    const d = new Date();
+    const h = d.getHours();
+    const m = d.getMinutes();
+    const s = d.getSeconds();
+    console.clear();
+    console.log(h, m, s);
+    console.log(d.toLocaleTimeString());
+}, 333);
+
+// clearInterval(intervalID);
+
