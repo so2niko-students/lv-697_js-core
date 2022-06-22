@@ -1,70 +1,29 @@
-  
-**Практика**
+ **Посилання**
 
-## Morse
+- [LearnJS Класи](https://uk.javascript.info/classes)
+- [MDN Класи](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+- [W3S Класи](https://www.w3schools.com/js/js_classes.asp)
 
-  
+## Маркер
 
-You have to write a simple [Morse](https://en.wikipedia.org/wiki/Morse_code) code decoder. While the Morse code is now mostly superceded by voice and digital data communication channels, it still has its use in some applications around the world.
+Реалізувати клас, який описує простий маркер. У класі мають бути такі компоненти:
+- поле, яке зберігає колір маркера;
+- поле, яке зберігає кількість чорнила в маркері (у відсотках);
+- метод друку (метод приймає рядок і виводить текст відповідним кольором;
+текст виводиться до тих пір, поки в маркері є чорнило; один не пробіловий символ – це 0,5% чорнила в маркері).
 
-The Morse code encodes every character as a sequence of "dots" and "dashes". For example, the letter A is coded as ·−, letter Q is coded as −−·−, and digit 1 is coded as ·−−−−. The Morse code is case-insensitive, traditionally capital letters are used. When the message is written in Morse code, a single space is used to separate the character codes and 3 spaces are used to separate words. For example, the message HEY JUDE in Morse code is ···· · −·−− ·−−− ··− −·· ·.
+### Додаткове завдання:
 
-NOTE: Extra spaces before or after the code have no meaning and should be ignored.
+Реалізувати клас, що описує маркер, що заправляється, успадкувавши його від простого маркера і додавши метод для заправки маркера. Продемонструвати роботу написаних методів
 
-In addition to letters, digits and some punctuation, there are some special service codes, the most notorious of those is the international distress signal [SOS](https://en.wikipedia.org/wiki/SOS) (that was first issued by [Titanic](https://en.wikipedia.org/wiki/Titanic)), that is coded as ···−−−···. These special codes are treated as single special characters, and usually are transmitted as separate words.
+## Коло
 
-Your task is to implement a function that would take the morse code as input and return a decoded human-readable string.
+Реалізувати клас, що описує коло. У класі мають бути такі компоненти:
+- поле, що зберігає радіус кола;
+- get-властивість, що повертає радіус кола;
+- set-властивість, що встановлює радіус кола;
+- get-властивість, що повертає діаметр кола;
+- метод, що обчислює площу кола;
+- метод, що обчислює довжину кола.
 
-  
-
-NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode characters.
-
-Good luck!
-
-  
-
-**Examples:**
-
-  
-
-> decodeMorse('.... . -.-- .--- ..- -.. .') //should return "HEY JUDE"
-
-  
-
-## Знову Саймон
-
-  
-
-Знову Саймон.
-
-Саймон написав код. Саймон впевнений, що код гаразд. Але код не працює. Виправте помилки, допущені Саймоном.
-
-    <!doctype html>
-    <html>
-    <head>
-    <style>
-	.blocs>div{
-	width: 10px;
-	heigth: 20px;
-	border: 1px solid grey;
-	background-color: bleck;
-	}
-	</style>
-    </head>
-    <body>
-    <input type="number" class="in">
-    <div class="blocs"> </div>
-    <script>
-    document.querySelector('.in').addEventListener('keyup', function(ev){
-    let blocs = document.querySelectorAll('.blocs'),
-    count = parseInt(ev.target.innerHTML);
-    while(blocs.firstChild){
-    blocs.removeChild(blocs.firstChild);
-    }
-    while(count++){
-    blocs.appendChild(document.createElement('div'));
-    }
-    });
-    </script>
-    </body>
-    </html>
+Продемонструвати роботу властивостей та методів.
