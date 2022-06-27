@@ -1,17 +1,24 @@
-//Дані
+const d = {
+    in : document.querySelector('.in'),
+    out : document.querySelector('.out')
+};
+
+d.in.addEventListener('change', () => {
+    const str = d.in.value;
+    const strLen = str.length;
+    let outStr = '';
+    for(let i = 0; i < strLen; i += 1){
+        outStr += isNaN(str[i]) ? str[i] : '';
+    }
+
+    d.out.innerText = outStr;
+});
+
+//Regular expressions - Регулярні вирази
 /**
- * boolean - true/false - Так, Ні, Правда, Брехня, логічний тип даних, 
- * number - 0, 123, -4545, 666.455, NaN. Числа. 
- * string - 'example 1', "example 2", `example 3` - template string (шаблонні строки)
- * object - контейнер з даними, 
- * symbol
- * null
- * undefined
- * big int
+ * Квантифікатори - https://uk.javascript.info/regexp-quantifiers
+ * Якоря - https://uk.javascript.info/regexp-anchors
+ * флаги - gim - https://uk.javascript.info/regexp-introduction
+ * групи - https://uk.javascript.info/regexp-groups
+ * діапазони - https://uk.javascript.info/regexp-character-sets-and-ranges
  */
-
-const text = `Lorem ipsum dolor sit amet consectetur ${ 2 + 2 } adipisicing elit. 
-Rem, et quis quia mollitia ab nihil excepturi sit temporibus perspiciatis. 
-Voluptatibus consequuntur rem at neque repellat perferendis consequatur eius recusandae maiores.`;
-
-console.log(text);
