@@ -1,5 +1,6 @@
 //LocalStorage
 //SessionStorage
+const URL = 'https://randomuser.me/api/';
 
 function g(className){ return document.querySelector(className)}
 function listener(className, eventName, callback){
@@ -18,3 +19,17 @@ listener('.open', 'click', () => {
 listener('.openInThisWindow', 'click', () => {
     window.open('secondPage.html', '_self');
 });
+
+function loadDoc() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.addEventListener('load', () => {
+        const data = JSON.parse(xhttp.responseText);
+        console.log(data);
+    });
+    xhttp.open("GET", URL, true);
+    xhttp.send();
+}
+
+// loadDoc();
+
+fetch(URL).then(r => r.json()).then(console.log);
