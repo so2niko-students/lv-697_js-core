@@ -1,17 +1,16 @@
-//Дані
-/**
- * boolean - true/false - Так, Ні, Правда, Брехня, логічний тип даних, 
- * number - 0, 123, -4545, 666.455, NaN. Числа. 
- * string - 'example 1', "example 2", `example 3` - template string (шаблонні строки)
- * object - контейнер з даними, 
- * symbol
- * null
- * undefined
- * big int
- */
+const URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSk_8vtyUu_h9UcJwMHXgZmARiJin3905d6Ou-BffRvOGEBVMvpm0SW4nL4aI9lR127XktogbzRwhrS/pub?gid=0&single=true&output=tsv';
 
-const text = `Lorem ipsum dolor sit amet consectetur ${ 2 + 2 } adipisicing elit. 
-Rem, et quis quia mollitia ab nihil excepturi sit temporibus perspiciatis. 
-Voluptatibus consequuntur rem at neque repellat perferendis consequatur eius recusandae maiores.`;
+// fetch(URL).then(r => r.text()).then(parseText);
 
-console.log(text);
+// function parseText(text){
+//     const dataArr = text.split('\r\n').map(row => row.split('\t'));
+//     const names = dataArr.shift();
+//     const data = dataArr.map(row => row.reduce((acc, el, i) => {
+//         acc[names[i]] = el;
+//         return acc;
+//     }, {}));
+//     console.log(data);
+//     return data;
+// }
+
+parseGoogleSheet(URL, console.log);
